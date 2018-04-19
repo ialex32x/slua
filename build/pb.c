@@ -27,9 +27,12 @@
 #include "lauxlib.h"
 
 #if defined(_ALLBSD_SOURCE) || defined(__APPLE__)
-#include <machine/endian.h>
+#   include <machine/endian.h>
+#elif defined(_WIN16) || defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__) 
+#   include <winsock2.h>
+#   include <sys/param.h>
 #else
-#include <endian.h>
+#   include <endian.h>
 #endif
 
 #ifdef BYTE_ORDER
