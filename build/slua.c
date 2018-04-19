@@ -48,9 +48,11 @@
 #include <math.h>
 #endif
 
+extern int luaopen_pb (lua_State *L);
+
 static const luaL_Reg s_lib_preload[] = {
 	{ "socket.core", luaopen_socket_core },
-	// { "pb",    luaopen_pb }, // any 3rd lualibs added here
+	{ "pb",    luaopen_pb }, // any 3rd lualibs added here
 	{ NULL, NULL }
 };
 

@@ -48,6 +48,7 @@ else (
 set ENV32="%VCVARS%vcvars32.bat"
 set ENV64="%VCVARS%amd64\vcvars64.bat"
 
+copy /Y pb.c "%USE_LUA_PATH%\src\"
 copy /Y slua.c "%USE_LUA_PATH%\src\"
 copy /Y luasocket-mini\*.* "%USE_LUA_PATH%\src\"
 
