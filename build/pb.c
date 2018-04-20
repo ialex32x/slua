@@ -30,7 +30,7 @@
 #   include <machine/endian.h>
 #elif defined(_WIN16) || defined(_WIN32) || defined(_WIN64) || defined(__WINDOWS__) 
 #   include <winsock2.h>
-#   include <sys/param.h>
+// #   include <sys/param.h>
 #else
 #   include <endian.h>
 #endif
