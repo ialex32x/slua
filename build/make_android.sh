@@ -12,7 +12,8 @@ cp build_android_v7a/libslua.so ../Assets/Plugins/Android/libs/armeabi-v7a/libsl
 
 # build arm64
 mkdir -p build_android_arm64 && cd build_android_arm64
-cmake -DANDROID_ABI=arm64-v8a -DCMAKE_TOOLCHAIN_FILE=../cmake/android.toolchain.cmake -DANDROID_TOOLCHAIN_NAME=aarch64-linux-android-4.9 -DANDROID_NATIVE_API_LEVEL=android-21 ..
+cmake -DANDROID_ABI=arm64-v8a -DCMAKE_TOOLCHAIN_FILE=../cmake/android.toolchain.cmake -DANDROID_TOOLCHAIN_NAME=aarch64-linux-android-4.9 -DANDROID_NATIVE_API_LEVEL=android-9 ..
+# cmake -DANDROID_ABI=arm64-v8a -DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake -DANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-clang -DANDROID_NATIVE_API_LEVEL=android-9 ..
 cd ..
 cmake --build build_android_arm64 --config Release
 cp build_android_arm64/libslua.so ../Assets/Plugins/Android/libs/armeabi-arm64/libslua.so
