@@ -26,18 +26,25 @@
 #include <lualib.h>
 #include <lauxlib.h>
 
-#ifdef __APPLE__
-#define _ALLBSD_SOURCE
-#endif
+#ifdef _WIN32
+    #define IS_LITTLE_ENDIAN
+#else 
+    #ifdef __APPLE__
+        #include "TargetConditionals.h"
+        #ifdef TARGET_OS_MAC
+            #define _ALLBSD_SOURCE
+        #endif
+    #endif
 
-#ifdef _ALLBSD_SOURCE 
-#include <machine/endian.h>
-#else
-#include <endian.h>
-#endif
+    #ifdef _ALLBSD_SOURCE 
+        #include <machine/endian.h>
+    #else
+        #include <endian.h>
+    #endif
 
-#if __BYTE_ORDER == __LITTLE_ENDIAN
-#define IS_LITTLE_ENDIAN
+    #if __BYTE_ORDER == __LITTLE_ENDIAN
+        #define IS_LITTLE_ENDIAN
+    #endif
 #endif
 
 #define IOSTRING_META "protobuf.IOString"
