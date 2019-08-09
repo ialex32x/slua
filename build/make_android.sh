@@ -1,6 +1,6 @@
-if [ -z "$NDKPATH" ]; then
-    echo "Android NDK not detected'"
-    exit 1
+
+if [ -z "$ANDROID_NDK" ]; then
+    export ANDROID_NDK=~/android-ndk-r15c
 fi
 
 # build armv7a

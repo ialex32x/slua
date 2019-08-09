@@ -40,6 +40,7 @@ set(LUA_SRC_FILES
     ${LUA_SRC_PATH}/lvm.c
     ${LUA_SRC_PATH}/lzio.c
     ${SLUA_SRC_PATH}
+    ${EXT_SRC_ROOT}/pb.c
 )
 
 set(THIRDPART_INC_PATH "")
